@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+	<title>Age and gender detection</title>
+	 <style>
+        .e {
+            width: 20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            background-color: #4CAF50;
+        }
+        .f {
+            width: 20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        body{
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxvAvOlC5IL1jnm9ivo2h0lQx7JdzslVBkhw&usqp=CAU');
+			background-attachment: fixed;
+			background-size: cover;
+        }
+        .header-top-nav ul li{
+			display: inline-block;
+			border-left: 1px solid rgba(85, 85, 85, 0.41);
+			border-right: 1px solid rgba(85, 85, 85, 0.41);
+			border-top: 1px solid rgba(85, 85, 85, 0.41);
+			border-bottom: 1px solid rgba(85, 85, 85, 0.41);
+			background-color: #D2D1FB;
+		}
+		.header-top-nav ul li a{
+			color: #000;
+			font-family: 'PT Sans Narrow', sans-serif;
+			font-size: 1.3em;
+			font-weight: 400;
+			text-transform: uppercase;
+			display: block;
+			padding: 15px 100px;
+			transition: 0.5s ease;
+			-o-transition: 0.5s ease;
+			-webkit-transition: 0.5s ease;
+		}
+		.header-top-nav li.active> a, .header-top-nav li> a:hover {
+			color: #ff9900;
+			background: #454545;
+		}
+		p{
+			font-size: 15px;
+			text-align: justify;
+		}
+		img{
+			height: 200px;
+			width: 400px
+		}
+		#first{
+			height: 150px;
+			width: 400px;
+		}
+		#second{
+			height: 600px;
+			width: 600px;
+		}
+
+    </style>
+</head>
+<body>
+	<div class="header-top-nav">
+		<div class="wrap">
+			<ul>
+				<li><a href="#information">Inforamation</a></li>
+				<li><a href="#Implementation">Implementation</a></li>
+				<li><a href="#Help & About Us">Help & About Us</a></li>
+			</ul>
+		</div>
+	</div>
+	<br><br>
+	<center><h1 style="font:color=white;">Live Streaming Age and Gender Detection</h1></center>
+	<div id="implementation">
+		<form method="post" action="/FlaskTutorial">
+			<center><input type="text" name="name" class="f" placeholder="Enter name">
+					<br><br>
+					<input type="submit" value="Start Detection" class="e" name="ok"/>
+			</center>
+		</form>
+	</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div id="information">
+		<center><h1>Information Regarding Project</h1></center>
+	<h3>PROJECT SUMMARY</h3>
+	<p>In this project, we are doing such a thing which can predict the live age and gender using the convolutional neural network. So, for that we have taken a pretrained dataset from the data flair website and provided the coding for first initializing the model and then setting the network for the working and after that highlighting the faces using the camera which can be accessed using OpenCV. Then two variables are taken age and the gender which can be easily classified using the argparse. The gender consists of [male and female] and the age consists of the range of [(0-2), (4-6), (8-12), (15-20), (25-32), (38-43), (48-53), (60-100)] and the image is captured using the OpenCV and the and the gender is being predicted. Now the python part is being completed then created a html form in the templates with the name age_and_gender.html after that using the flask connected the html form with the python code. Thus, the main objective of our project is to give live streaming age and gender detection with much more accuracy.</p>
+
+	<h3>WHAT IS CNN?</h3>
+	<p>The full form of CNN is convolutional neural network and using this neural network we can process our data which is having a shape like 2D matrix like images. Most probably the convolutional neural network is mostly being used for image detection and image classification type. We know that the images are represented in the form of 2D matrix of pixels so that we can use convolutional neural network to recognize or classify the image. Thus, suppose we have to recognize which are the objects and which are the faces then we are using the convolutional neural network to identify it. In machine learning or deep learning the convolutional neural network is a class of deep neural network used for analyzing images.
+	</p>
+
+	<center><img id="first" src="data:image/jpeg;base64,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"></center>
+
+	<h3>WORKING OF CNN</h3>
+	<p>
+		There are mainly four layers in the convolutional neural network: 1. Convolutional layer 2. Activation layer 3. Pooling layer 4. Fully connected layer. The convolutional layer of CNN is the most important layer as it does the work of taking the input and then connecting it with the further layer. Convolutional layer is considered as the core building block as it does the work of dead lifting. This layer takes the input of data with the help of a filter or a kernel and after the process of filtering this image or data is sent further for processing.
+	</p>
+
+	<center><img id="second" src="https://miro.medium.com/max/875/1*qtinjiZct2w7Dr4XoFixnA.gif"></center>
+
+	<p>The second layer is said to be the activation layer which is applying the ReLu (Rectified Linear Unit). This second layer does the work of increasing the non-linearity in the CNN. This layer also helps the model to decide if a neuron would fire or not.</p>
+
+	<center><img src="https://miro.medium.com/max/658/1*GcI7G-JLAQiEoCON7xFbhg.gif"></center>
+
+	<p>The third layer in the convolutional neural network is the pooling layer which involves down sampling of features. This layer does the work of progressively reducing the spatial size of the representation. It does the work of reducing the amount of parameters and computation in the network. This layer operates independently on each feature map.</p>
+
+	<center><img src="https://miro.medium.com/max/875/1*lbUtgiANqLoO1GFSc9pHTg.gif"></center>
+
+	<p>The final layer is the fully connected layers and it involves flattening. It takes the data from the third layer i.e. the pooling layer mixes the whole matrix part and after the mixing whatever the final output is being obtained it is provided to the model and the final answer is being predicted on the basis of that.</p>
+
+	<center><img src="https://miro.medium.com/max/875/0*Ck5EU5xxHLwo3uiw.jpeg"></center>
+
+	<p>Thus, the overall Working of the convolutional neural network can be shown as below:</p>
+
+	<center><img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/fully_connected_layer1.png"></center>
+
+	<p>Now let’s understand how CNN recognizes a face: The pixels from the image are fed to the convolutional layer that performs the convolution operation. This results in formation of a convolved map. The convolved map is then applied to a ReLU function which generate a rectified feature map. Now the image is processed with multiple convolutions and ReLU layers for locating the features. Different pooling layers with various filters are used to identify specific parts of the image. The pooled feature map is flattened and fed to a fully connected layer to get the final output and in other words we can say that the any portion of the face is taken it is being matched with the images given for training then where most of the things are being match it predicting as male or female.</p>
+	</div>
+
+
+	<div id="Help & About Us">
+		<center><h1>Help</h1></center>
+		<p>Please check your camera connectivity that if the camera is properly installed or not then type your name in the text box and click the start detection button authomatically the camera will start working and identify your age and gender.
+		<center><h1>About Us</h1></center>
+		<p>This project was created as the part of our Software Group Project-III(IT350) and our details are:<br>
+			Deepesh Nair(18DIT038) 6th Semester Student of Devang Patel Institute of Advance Technology and Research, CHARUSAT University<br>
+			Viram Shah(18DIT069) 6th Semester Student of Devang Patel Institute of Advance Technology and Research, CHARUSAT University
+		</p>
+	</div>
+</body>
+</html>
